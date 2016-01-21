@@ -1,0 +1,39 @@
+package com.psl.dao;
+
+import java.util.Iterator;
+import java.util.List;
+
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.psl.bean.Product;
+import com.psl.bean.RatingDetails;
+import com.psl.utility.HibernateUtility;
+
+public class AverageRating {
+
+	public void calulateAverageRating() {
+
+		SessionFactory sf = HibernateUtility.getSessionfactory();
+
+		Session session = sf.openSession();
+
+		session.beginTransaction();
+		String sql = "SELECT productId FROM product";
+		SQLQuery query = session.createSQLQuery(sql);
+		query.addEntity(Product.class);
+		List<Integer> listProductIds = query.list();
+		for(int pid : listProductIds){
+			System.out.println(pid);
+			
+		}
+		/*for (Iterator iterator = listProductIds.iterator(); iterator.hasNext();) {
+			RatingDetails ratingobj = (RatingDetails) iterator.next();
+			System.out.print("First Name: " + employee.getFirstName());
+			System.out.print("  Last Name: " + employee.getLastName());
+			System.out.println("  Salary: " + employee.getSalary());
+		}*/
+	}
+
+}

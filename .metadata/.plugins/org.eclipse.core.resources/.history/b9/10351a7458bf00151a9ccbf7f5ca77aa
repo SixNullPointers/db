@@ -1,0 +1,12 @@
+package com.psl.dao;
+
+import com.psl.bean.Customer;
+
+public interface RatingDao {
+
+	void insertRating(RatingDetails cust);
+	RatingDetails getRating(int custId);
+	void updateRating(RatingDetails cust);
+	void deleteRating(RatingDetails cust);
+	
+}

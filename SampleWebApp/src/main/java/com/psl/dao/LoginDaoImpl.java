@@ -47,4 +47,10 @@ public class LoginDaoImpl implements LoginDao {
 		session.getTransaction().commit();
 	}
 
+	public boolean verifyLogin(String user, String pwd) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	
 }

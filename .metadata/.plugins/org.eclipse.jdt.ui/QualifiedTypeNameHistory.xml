@@ -5,14 +5,11 @@
 <fullyQualifiedTypeName name="com.psl.bean.CustomerStatus"/>
 <fullyQualifiedTypeName name="com.psl.dao.CustomerDaoImpl"/>
 <fullyQualifiedTypeName name="com.psl.dao.LoginDaoImpl"/>
-<fullyQualifiedTypeName name="com.psl.bean.Product"/>
 <fullyQualifiedTypeName name="com.psl.dao.ProductDaoImpl"/>
 <fullyQualifiedTypeName name="javax.persistence.OneToOne"/>
 <fullyQualifiedTypeName name="org.hibernate.annotations.Cascade"/>
 <fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
 <fullyQualifiedTypeName name="com.psl.dao.QueryReplyDao"/>
-<fullyQualifiedTypeName name="com.psl.bean.Query"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="com.psl.dao.QueryDaoImpl"/>
 <fullyQualifiedTypeName name="com.psl.dao.QueryReplyDaoImpl"/>
 <fullyQualifiedTypeName name="com.psl.bean.QueryReplyDetails"/>
@@ -26,4 +23,20 @@
 <fullyQualifiedTypeName name="com.psl.dao.ReviewDaoImpl"/>
 <fullyQualifiedTypeName name="com.psl.bean.ReviewReplyDetails"/>
 <fullyQualifiedTypeName name="com.psl.dao.ReviewReplyDaoImpl"/>
+<fullyQualifiedTypeName name="org.hibernate.annotations.Generated"/>
+<fullyQualifiedTypeName name="com.psl.dao.RatingDao"/>
+<fullyQualifiedTypeName name="com.psl.dao.RatingDaoImpl"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="com.psl.dao.AverageRating"/>
+<fullyQualifiedTypeName name="com.psl.bean.RatingDetails"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.Map.Entry"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="java.util.Comparator"/>
+<fullyQualifiedTypeName name="com.psl.bean.Category"/>
+<fullyQualifiedTypeName name="com.psl.bean.Product"/>
+<fullyQualifiedTypeName name="com.psl.bean.Query"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
 </qualifiedTypeNameHistroy>

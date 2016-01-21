@@ -1,43 +1,37 @@
 package com.psl.bean;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 
 @Entity
 
 public class RatingDetails {
 
-	private Product product;
-	private static int noOfCustomers;
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
+	private int srNo;
 	private int rating;
-	private float averageRating;
+	@OneToOne( cascade={CascadeType.ALL} )
+	@JoinColumn(name="productId")
+	private Product product;
+	@OneToOne( cascade={CascadeType.ALL})
+	@JoinColumn(name="customerId")
+	private Customer cutomer;
 	
 	public RatingDetails() {
 	}
 
-	
-
-
-	public Product getProduct() {
-		return product;
+	public int getSrNo() {
+		return srNo;
 	}
 
-
-
-
-	public void setProduct(Product product) {
-		this.product = product;
-	}
-
-
-
-
-	public int getNoOfCustomers() {
-		return noOfCustomers;
-	}
-
-	public void setNoOfCustomers(int noOfCustomers) {
-		this.noOfCustomers = noOfCustomers;
+	public void setSrNo(int srNo) {
+		this.srNo = srNo;
 	}
 
 	public int getRating() {
@@ -48,13 +42,23 @@ public class RatingDetails {
 		this.rating = rating;
 	}
 
-	public float getAverageRating() {
-		return averageRating;
+	public Product getProduct() {
+		return product;
 	}
 
-	public void setAverageRating(float averageRating) {
-		this.averageRating = averageRating;
+	public void setProduct(Product product) {
+		this.product = product;
 	}
+
+	public Customer getCutomer() {
+		return cutomer;
+	}
+
+	public void setCutomer(Customer cutomer) {
+		this.cutomer = cutomer;
+	}
+
+	
 	
 	
 }

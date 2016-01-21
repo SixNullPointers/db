@@ -9,16 +9,19 @@ import com.psl.bean.Login;
 import com.psl.bean.Product;
 import com.psl.bean.Query;
 import com.psl.bean.QueryReplyDetails;
+import com.psl.bean.RatingDetails;
 import com.psl.bean.RequestDetails;
 import com.psl.bean.RequestStatus;
 import com.psl.bean.Review;
 import com.psl.bean.ReviewReplyDetails;
+import com.psl.dao.AverageRating;
 import com.psl.dao.CategoryDaoImpl;
 import com.psl.dao.CustomerDaoImpl;
 import com.psl.dao.LoginDaoImpl;
 import com.psl.dao.ProductDaoImpl;
 import com.psl.dao.QueryDaoImpl;
 import com.psl.dao.QueryReplyDaoImpl;
+import com.psl.dao.RatingDaoImpl;
 import com.psl.dao.RequestDaoImpl;
 import com.psl.dao.ReviewDaoImpl;
 import com.psl.dao.ReviewReplyDaoImpl;
@@ -26,9 +29,25 @@ import com.psl.dao.ReviewReplyDaoImpl;
 public class Client {
 
 public static void main(String[] args) {
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+/*	
 	Category cat = new Category();
 	//cat.setCategoryId(1);
-	cat.setCategoryName("Laptop");
+	cat.setCategoryName("Mobile");
 
 	CategoryDaoImpl dao = new CategoryDaoImpl();
 	dao.insertCategory(cat);
@@ -36,10 +55,10 @@ public static void main(String[] args) {
 	
 	Customer cust = new Customer();
 	//cust.setCustomerId(1);
-	cust.setFirstName("Om");
-	cust.setLastName("Shankar");
-	cust.setContactNo("9654345678");
-	cust.setEmail("om.shankar@gmail.com");
+	cust.setFirstName("Anjali");
+	cust.setLastName("Roy");
+	cust.setContactNo("7888842345");
+	cust.setEmail("anjali.roy@gmail.com");
 	cust.setStatus(CustomerStatus.ACTIVE);
 	
 	CustomerDaoImpl daocust = new CustomerDaoImpl();
@@ -48,8 +67,8 @@ public static void main(String[] args) {
 	
 	
 	Login login = new Login();
-	login.setUsername("omshankar");
-	login.setPassword("omshankar");
+	login.setUsername("anjaliroy");
+	login.setPassword("anjaliroy");
 	login.setCustomer(cust);
 	LoginDaoImpl daologin = new LoginDaoImpl();
 	daologin.insertLogin(login);
@@ -57,8 +76,9 @@ public static void main(String[] args) {
 	
 	
 	Product product = new Product();
-	product.setProductName("Dell Inspiron 3521");
-	product.setProductPrice(51700.00);
+	product.setProductName("HP Slate6 VoiceTab");
+	product.setProductPrice(10299.00);
+	product.setProductDescription(" HP Slate6 VoiceTab smartphone was launched in January 2014. The phone comes with a 6.00-inch touchscreen display with a resolution of 720 pixels by 1280 pixels at a PPI of 245 pixels per inch. ");
 	product.setCategory(cat);
 	
 	ProductDaoImpl daoprod = new ProductDaoImpl();
@@ -66,7 +86,7 @@ public static void main(String[] args) {
 	System.out.println("Product Inserted");
 	
 	Query query = new Query();
-	query.setQueryMessage("How is this laptop");
+	query.setQueryMessage("How is the battery life");
 	query.setQueryDate(new Date());
 	query.setProduct(product);
 	query.setCustomer(cust);
@@ -75,7 +95,7 @@ public static void main(String[] args) {
 	daoquery.insertQuery(query);
 	
 	QueryReplyDetails qreply = new QueryReplyDetails();
-	qreply.setReplyMessage("The laptop is amazing");
+	qreply.setReplyMessage("Good");
 	qreply.setQuery(query);
 	qreply.setReplyDate(new Date());
 	qreply.setCustomer(cust);
@@ -96,7 +116,7 @@ public static void main(String[] args) {
 	review.setCustomer(cust);
 	review.setProduct(product);
 	review.setReviewDate(new Date());
-	review.setReviewMessage("Comfortable and easy to use laptom....really good");
+	review.setReviewMessage("Awesome camera");
 	
 	
 	ReviewDaoImpl reviewDaoImpl = new ReviewDaoImpl();
@@ -105,10 +125,90 @@ public static void main(String[] args) {
 	ReviewReplyDetails reviewReply = new ReviewReplyDetails();
 	reviewReply.setCustomer(cust);
 	reviewReply.setReplyDate(new Date());
-	reviewReply.setReplyMessage("Yes I agree");
+	reviewReply.setReplyMessage("Yes I agree...Lovin it!!");
 	reviewReply.setReview(review);
 	
 	ReviewReplyDaoImpl reviewReplyDaoImpl = new ReviewReplyDaoImpl();
 	reviewReplyDaoImpl.insertReviewReply(reviewReply);
+	
+	RatingDetails rateobj = new RatingDetails();
+	rateobj.setCutomer(cust);
+	rateobj.setProduct(product);
+	rateobj.setRating(4);
+
+
+	RatingDaoImpl daorate = new RatingDaoImpl();
+	daorate.insertRating(rateobj);
+	System.out.println("rate inserted");
+	daorate.getRating(3, 3);
+	//System.out.println("rate inserted");
+*/
+	AverageRating obj = new AverageRating();
+	//obj.calulateAverageRating();
+	
+	obj.AverageRatingByProductName("Sony Xperia M2");
+	
+	
+	/*Category cat = new Category("Refrigerators");
+	Category cat1 = new Category("Air Conditioner");
+	Category cat2 = new Category("Iron");
+	Category cat3 = new Category("Oven");
+	Category cat4 = new Category("Tv");
+	Category cat5 = new Category("Camera");
+	Category cat6 = new Category("Mobile");
+	Category cat7 = new Category("Laptop");
+	Category cat8 = new Category("Tablet");
+	Category cat9 = new Category("PC");
+	Category cat10 = new Category("Pen Drive");
+	Category cat11 = new Category("Hard Discs");
+	Category cat12 = new Category("Earphone");
+	Category cat13 = new Category("Headphone");
+	Category cat14 = new Category("Shoes");
+	Category cat15 = new Category("Watches");
+
+	CategoryDaoImpl dao = new CategoryDaoImpl();
+	dao.insertCategory(cat);
+	dao.insertCategory(cat1);
+	dao.insertCategory(cat2);
+	dao.insertCategory(cat3);
+	dao.insertCategory(cat4);
+	dao.insertCategory(cat5);
+	dao.insertCategory(cat6);
+	dao.insertCategory(cat7);
+	dao.insertCategory(cat8);
+	dao.insertCategory(cat9);
+	dao.insertCategory(cat10);
+	dao.insertCategory(cat11);
+	dao.insertCategory(cat12);
+	dao.insertCategory(cat13);
+	dao.insertCategory(cat14);
+	dao.insertCategory(cat15);
+
+	System.out.println("Record inserted");
+	Product product1 = new Product("Whirlpool 205 CLS 3S 190 L Single Door Refrigerator",56000.00,"Number of Shelves: 2,3 Star Rating,Direct Cool,Color: Solid Wine,Top Freezer Refrigerator,WxHxD: 536 mm X 1191 mm X 604 mm",cat);
+	Product product2=new Product("Whirlpool 200 GENIUS CLS PLUS 3S 185 L Single Door Refrigerator", 46000.00,"Number of Shelves: 2,3 Star Rating,Direct Cool,Color: Blush Exotica,Top Freezer Refrigerator,WxHxD: 536 mm X 1159 mm X 604 mm", cat);
+	Product product3=new Product("LG GL-B252VPGY 240 L Double Door Refrigerator", 20000.00, "Number of Shelves: 2,2 Star Rating,Frost Free,Color: Wine Blossom,Top Freezer Refrigerator,WxHxD: 550 mm X 1450 mm X 685 mm", cat);
+	Product product4=new Product("Samsung RT33JSMFESZ/TL 321 L Double Door Refrigerator",100000.00, "Number of Shelves: 4,4 Star Rating,Frost Free,Color: Tender Lily Silver,Top Freezer Refrigerator,WxHxD: 600 mm X 1635 mm X 722 mm", cat);
+	Product product5=new Product("Samsung RS21HZLMR1/XT 585 L Side by Side Refrigerator",150000.00, "Number of Shelves: 5,Frost Free,Color:Mirror,Glass,Side by Side,Refrigerator,WxHxD: 912 mm X 1789 mm X 734 mm", cat);
+	ProductDaoImpl daoprod = new ProductDaoImpl();
+	daoprod.insertProduct(product1);
+	daoprod.insertProduct(product2);
+	daoprod.insertProduct(product3);
+	daoprod.insertProduct(product4);
+	daoprod.insertProduct(product5);
+	System.out.println("Product Inserted");
+	*/
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
 }

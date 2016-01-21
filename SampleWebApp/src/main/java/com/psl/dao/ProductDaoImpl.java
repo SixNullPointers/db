@@ -3,7 +3,6 @@ package com.psl.dao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import com.psl.bean.Login;
 import com.psl.bean.Product;
 import com.psl.utility.HibernateUtility;
 

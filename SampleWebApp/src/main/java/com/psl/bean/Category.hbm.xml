@@ -15,7 +15,7 @@
 
 	<class name="com.psl.bean.Customer">
 		<id name="customerId" type="integer">
-			<generator class="increment"></generator>
+			<generator class="identity"></generator>
 		</id>
 		<property name="firstName" type="string" />
 		<property name="lastName" type="string" />
@@ -47,8 +47,10 @@
 		</id>
 		<property name="productName" type="string" />
 		<property name="productPrice" type="double" />
+		<property name="productDescription" type="string" />
 		<many-to-one name="Category" class="com.psl.bean.Category"
-			column="categoryId" unique="true" not-null="true" cascade="all" />
+		column="categoryId"  not-null="true"  />
+		<!-- unique="true" -->
 	</class>
 	
 	<class name="com.psl.bean.Query">

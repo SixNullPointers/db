@@ -14,6 +14,7 @@ public interface CategoryDao {
 	//Read
 	
 	Category getCategory(int catId);
+	Category getCategoryByName(String categoryName);
 	
 	//Update
 	void updateCategory(Category cat);

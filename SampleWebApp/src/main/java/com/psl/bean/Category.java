@@ -5,6 +5,12 @@ package com.psl.bean;
 //@Table(name = "CATEGORY")
 public class Category {
 
+	@Override
+	public String toString() {
+		return "Category [categoryId=" + categoryId + ", categoryName="
+				+ categoryName + "]";
+	}
+
 	//@Id
 	//@GeneratedValue
 	private int categoryId;
@@ -15,6 +21,12 @@ public class Category {
 	}
 
 	
+
+	public Category(String categoryName) {
+		this.categoryName = categoryName;
+	}
+
+
 
 	public int getCategoryId() {
 		return categoryId;

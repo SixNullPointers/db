@@ -10,12 +10,25 @@ public class Product {
 	private int productId;
 	private String productName;
 	private double productPrice;
+	private String productDescription;
 	private Category  category;
 	
 	public Product() {
 
 	}
 	
+	
+	
+	public Product(String productName, double productPrice,
+			String productDescription, Category category) {
+		this.productName = productName;
+		this.productPrice = productPrice;
+		this.productDescription = productDescription;
+		this.category = category;
+	}
+
+
+
 	public int getProductId() {
 		return productId;
 	}
@@ -41,6 +54,22 @@ public class Product {
 	}
 	public void setCategory(Category category) {
 		this.category = category;
+	}
+
+	public String getProductDescription() {
+		return productDescription;
+	}
+
+	public void setProductDescription(String productDescription) {
+		this.productDescription = productDescription;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [productId=" + productId + ", productName="
+				+ productName + ", productPrice=" + productPrice
+				+ ", productDescription=" + productDescription + ", category="
+				+ category + "]";
 	}
 	
 	

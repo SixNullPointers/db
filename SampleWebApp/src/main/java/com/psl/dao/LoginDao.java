@@ -7,4 +7,5 @@ public interface LoginDao {
 	Login getLogin(int loginNo);
 	void updateLogin(Login login);
 	void deleteLogin(Login login);
+	public boolean verifyLogin(String user,String pwd);
 }

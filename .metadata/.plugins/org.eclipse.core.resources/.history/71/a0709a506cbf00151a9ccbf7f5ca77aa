@@ -1,0 +1,74 @@
+package com.psl.dao;
+
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.psl.bean.RatingDetails;
+import com.psl.utility.HibernateUtility;
+
+public class RatingDaoImpl implements RatingDao{
+
+	public void insertRating(RatingDetails rateobj) {
+		SessionFactory sf = HibernateUtility.getSessionfactory();
+		
+		Session session =sf.openSession(); 
+		
+		session.beginTransaction();
+		
+		session.save(rateobj);
+		
+		
+		session.getTransaction().commit();
+		
+	}
+
+	public RatingDetails getRating(int customerId, int productId) {
+		SessionFactory sf = HibernateUtility.getSessionfactory();
+
+		Session session =sf.openSession(); //session factory will give sessions
+		//RatingDetails c = (RatingDetails)session.get(RatingDetails.class,catId);
+		/*String sql = "SELECT first_name, salary FROM EMPLOYEE";
+		SQLQuery query = session.createSQLQuery(sql);
+		query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		List results = query.list();*/
+		session.beginTransaction();
+		String sql = "SELECT * FROM ratingdetails where productid = :pid and customerid = :cid";
+        SQLQuery query = session.createSQLQuery(sql);
+        query.addEntity(RatingDetails.class);
+        query.setParameter("pid", productId);
+        query.setParameter("cid", customerId);
+        RatingDetails rateobj = (RatingDetails) query.uniqueResult();
+       /* List ratingobjs = query.list();
+        query.
+        for (Iterator iterator = 
+                          ratingobjs.iterator(); iterator.hasNext();){
+        	RatingDetails ratingobj = (RatingDetails) iterator.next(); 
+           System.out.print("First Name: " + employee.getFirstName()); 
+           System.out.print("  Last Name: " + employee.getLastName()); 
+           System.out.println("  Salary: " + employee.getSalary()); 
+        }*/
+		session.getTransaction().commit();		
+		return rateobj;
+	}
+
+	public void updateRating(RatingDetails rateobj) {
+		SessionFactory sf = HibernateUtility.getSessionfactory();
+		
+		Session session =sf.openSession(); 
+		session.beginTransaction();
+		session.update(rateobj);
+		session.getTransaction().commit();		
+	}
+
+	public void deleteRating(RatingDetails rateobj) {
+		SessionFactory sf = HibernateUtility.getSessionfactory();
+		
+		Session session =sf.openSession();
+		
+		session.beginTransaction();
+		session.delete(rateobj);
+		session.getTransaction().commit();		
+	}
+
+}

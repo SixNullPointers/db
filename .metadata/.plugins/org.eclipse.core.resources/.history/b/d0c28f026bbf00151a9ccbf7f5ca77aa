@@ -1,0 +1,54 @@
+package com.psl.dao;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.psl.bean.Category;
+import com.psl.bean.RatingDetails;
+import com.psl.utility.HibernateUtility;
+
+public class RatingDaoImpl implements RatingDao{
+
+	public void insertRating(RatingDetails rateobj) {
+SessionFactory sf = HibernateUtility.getSessionfactory();
+		
+		Session session =sf.openSession(); 
+		
+		session.beginTransaction();
+		
+		session.save(rateobj);
+		
+		
+		session.getTransaction().commit();
+		
+	}
+
+	public RatingDetails getRating(int customerId, int productId) {
+		SessionFactory sf = HibernateUtility.getSessionfactory();
+
+		Session session =sf.openSession(); //session factory will give sessions
+		RatingDetails c = (RatingDetails)session
+		
+		return c;
+	}
+
+	public void updateRating(RatingDetails rateobj) {
+		SessionFactory sf = HibernateUtility.getSessionfactory();
+		
+		Session session =sf.openSession(); 
+		session.beginTransaction();
+		session.update(rateobj);
+		session.getTransaction().commit();		
+	}
+
+	public void deleteRating(RatingDetails rateobj) {
+		SessionFactory sf = HibernateUtility.getSessionfactory();
+		
+		Session session =sf.openSession();
+		
+		session.beginTransaction();
+		session.delete(rateobj);
+		session.getTransaction().commit();		
+	}
+
+}

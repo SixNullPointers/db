@@ -13,10 +13,21 @@ public class Customer {
 	private String email;
 	private String contactNo;
 	private CustomerStatus status;
+	// @Id 
+	// @GeneratedValue
+	
 	
 	public Customer() {
 	}
 	
+	public Customer(String firstName, String lastName,
+			String email, String contactNo) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.contactNo = contactNo;
+	}
+
 	public int getCustomerId() {
 		return customerId;
 	}
